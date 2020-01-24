@@ -444,7 +444,7 @@
     //   normalizeResponse(store, primaryModelClass, payload, id, requestType) {
     //     debugger;
     //   }
-    keyForAttribute(key, method) {
+    keyForAttribute(key) {
       // debugger;
       // The key from the data payload is underscore, but the key in the model is camelCase
       return Ember.String.underscore(key);
@@ -547,7 +547,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("address-book/app")["default"].create({"name":"address-book","version":"0.0.0+a78cb30d"});
+            require("address-book/app")["default"].create({"name":"address-book","version":"0.0.0+a4ae609e"});
           }
         
 //# sourceMappingURL=address-book.map

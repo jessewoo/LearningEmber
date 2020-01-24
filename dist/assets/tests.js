@@ -34,7 +34,7 @@ define("address-book/tests/lint/app.lint-test", [], function () {
   });
   QUnit.test('serializers/application.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'serializers/application.js should pass ESLint\n\n2:10 - \'camelize\' is defined but never used. (no-unused-vars)\n9:24 - \'method\' is defined but never used. (no-unused-vars)');
+    assert.ok(true, 'serializers/application.js should pass ESLint\n\n');
   });
 });
 define("address-book/tests/lint/templates.template.lint-test", [], function () {
