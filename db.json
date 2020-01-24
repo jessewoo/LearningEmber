@@ -1,0 +1,28 @@
+{
+  "addresses": [
+    {
+      "id": 1,
+      "contact_name": "Sebastian Eschweiler",
+      "street_name": "1234 A Street",
+      "city": "Los Angeles",
+      "state": "California",
+      "zip_code": 90031
+    },
+    {
+      "id": 2,
+      "contact_name": "Steve Palmer",
+      "street_name": "4567 B Street",
+      "city": "San Diego",
+      "state": "California",
+      "zip_code": 92122
+    },
+    {
+      "id": 3,
+      "contact_name": "Ann Smith",
+      "street_name": "9876 C Street",
+      "city": "Anaheim",
+      "state": "California",
+      "zip_code": 94501
+    }
+  ]
+}
