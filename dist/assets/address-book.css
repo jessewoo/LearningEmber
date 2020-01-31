@@ -1,0 +1,143 @@
+.row_flex {
+  margin: 20px auto;
+  max-width: 300px;
+  display: flex;
+}
+
+/* Flexbox layout is calculated AFTER its content is loaded */
+/* AVOID using flexbox to build the overall layout of your website */
+.row_flex > div {
+  border: 1px dashed gray;
+  flex: 1 1 auto; /* Size of items defined inside items */
+  text-align: center;
+  padding: 12px;
+}
+
+/* With Grid, you can create GUTTERS between grid-items using grid-column-gap */
+/* With Flex, to achieve the same results, would need to use padding and nested containers. No gap property. */
+.row_grid {
+  margin: 20px auto;
+  max-width: 300px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* Size of items defined inside container */
+}
+
+/* Grid layout is calculated regardless of the content inside it */
+.row_grid div {
+  border: 1px dashed gray;
+  text-align: center;
+  padding: 12px;
+}
+
+/* One Row */
+.social-icons {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+}
+
+/* Grid CSS */
+/* FR - Track's FLEX FACTOR, takes a share of the remaining space in proportion to its flex factor */
+/* FRACTIONS */
+.container {
+  max-width: 800px;
+  margin: 2em auto;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: repeat(3, auto);
+  grid-gap: 1rem;
+}
+
+/* 4 values specified. row-start, column-start, row-end, column-end */
+.container header {
+  grid-area: 1/1/2/3;
+}
+
+.container main {
+  grid-area: 2/1/3/2;
+}
+
+.container aside {
+  grid-area: 2/2/3/3;
+}
+
+.container footer {
+  grid-area: 3/1/4/3;
+}
+
+.container > * {
+  background-color: #ddd;
+  padding: 1rem;
+}
+
+/* ----------------------- */
+.wrapper {
+  display: grid;
+  /* grid-template-columns:1fr 1fr 1fr;*/
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1em;
+  /* grid-auto-rows:100px; */
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.nested {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 70px;
+  grid-gap: 1em;
+}
+
+.wrapper > div {
+  background: #eee;
+  padding: 1em;
+}
+.wrapper > div:nth-child(odd) {
+  background: #ddd;
+}
+
+.nested > div {
+  border: #333 1px solid;
+  padding: 1em;
+}
+
+/* *********** */
+.wrapper2 {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 1em;
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+.wrapper2 > div {
+  background: #eee;
+  padding: 1em;
+}
+.wrapper2 > div:nth-child(odd) {
+  background: #ddd;
+}
+
+.box1 {
+  /*align-self:start;*/
+  grid-column: 1/3;
+  grid-row: 1/3;
+}
+
+.box2 {
+  /*align-self:end;*/
+  grid-column: 3;
+  grid-row: 1/3;
+}
+
+.box3 {
+  /*justify-self:end;*/
+  grid-column: 2/4;
+  grid-row: 3;
+}
+
+.box4 {
+  grid-column: 1;
+  grid-row: 2/4;
+  border: 1px solid #333;
+}

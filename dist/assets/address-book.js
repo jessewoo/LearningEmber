@@ -78,6 +78,18 @@
   });
   _exports.default = void 0;
 
+  var _default = Ember.Controller.extend({});
+
+  _exports.default = _default;
+});
+;define("address-book/controllers/form", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
   var _default = Ember.Controller.extend({
     // EVENT HANDLERS - WATCH FOR CLICK EVENTS, TRIGGER A FUNCTION OF THE SAME NAME IN OUR CONTROLLER
     actions: {
@@ -128,8 +140,7 @@
       }
 
     }
-  }); // Ember concurrency
-
+  });
 
   _exports.default = _default;
 });
@@ -368,7 +379,11 @@
   }
 
   _exports.default = Router;
-  Router.map(function () {});
+  Router.map(function () {
+    this.route("picture");
+    this.route("grid");
+    this.route('form');
+  });
 });
 ;define("address-book/routes/application", ["exports"], function (_exports) {
   "use strict";
@@ -390,6 +405,42 @@
     }
 
   });
+
+  _exports.default = _default;
+});
+;define("address-book/routes/form", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  var _default = Ember.Route.extend({});
+
+  _exports.default = _default;
+});
+;define("address-book/routes/grid", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  var _default = Ember.Route.extend({});
+
+  _exports.default = _default;
+});
+;define("address-book/routes/picture", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  var _default = Ember.Route.extend({});
 
   _exports.default = _default;
 });
@@ -463,10 +514,64 @@
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "efX77EBY",
-    "block": "{\"symbols\":[\"address\"],\"statements\":[[0,\"\\n\"],[7,\"div\",true],[8],[0,\"\\n    READ:\\n    Addresses:\\n    \"],[7,\"ul\",true],[8],[0,\"\\n\"],[0,\"\\n\"],[4,\"each\",[[24,[\"model\"]]],null,{\"statements\":[[0,\"        \"],[7,\"li\",true],[8],[0,\"ID \"],[1,[23,1,[\"id\"]],false],[0,\": \"],[1,[23,1,[\"contactName\"]],false],[0,\" lives at \"],[1,[23,1,[\"streetName\"]],false],[0,\",\\n            \"],[1,[23,1,[\"city\"]],false],[0,\",\"],[1,[23,1,[\"state\"]],false],[0,\", \"],[1,[23,1,[\"zipCode\"]],false],[9],[0,\"\\n\"]],\"parameters\":[1]},null],[0,\"    \"],[9],[0,\"\\n\"],[9],[0,\"\\n\\n\"],[7,\"div\",true],[8],[0,\"\\n    READ: Read Address with Id #1\\n    \"],[7,\"button\",false],[3,\"action\",[[23,0,[]],\"readAddress\"]],[8],[0,\"Read Address 1\"],[9],[0,\"\\n\"],[9],[0,\"\\n\\n\"],[7,\"div\",true],[10,\"style\",\"padding: 10px; margin: 10px; border: 1px solid #666\"],[8],[0,\"\\n    CREATE:\\n\"],[0,\"    \"],[1,[28,\"input\",null,[[\"value\",\"placeholder\"],[[24,[\"newContactName\"]],\"Contact name\"]]],false],[7,\"br\",true],[8],[9],[0,\"\\n    \"],[1,[28,\"input\",null,[[\"value\",\"placeholder\"],[[24,[\"newStreetName\"]],\"Street name\"]]],false],[7,\"br\",true],[8],[9],[0,\"\\n    \"],[1,[28,\"input\",null,[[\"value\",\"placeholder\"],[[24,[\"newCity\"]],\"City\"]]],false],[7,\"br\",true],[8],[9],[0,\"\\n    \"],[1,[28,\"input\",null,[[\"value\",\"placeholder\"],[[24,[\"newState\"]],\"State\"]]],false],[7,\"br\",true],[8],[9],[0,\"\\n    \"],[1,[28,\"input\",null,[[\"value\",\"placeholder\"],[[24,[\"newZipCode\"]],\"Zip Code\"]]],false],[7,\"br\",true],[8],[9],[0,\"\\n\\n    \"],[7,\"button\",false],[3,\"action\",[[23,0,[]],\"createAddress\"]],[8],[0,\"Create\"],[9],[0,\"\\n\"],[9],[0,\"\\n\\n\"],[7,\"div\",true],[8],[0,\"\\n    READ:\\n    \"],[1,[28,\"input\",null,[[\"value\",\"placeholder\"],[[24,[\"addressId\"]],\"Address Id\"]]],false],[0,\"\\n    \"],[7,\"button\",false],[3,\"action\",[[23,0,[]],\"readAddress\"]],[8],[0,\"Read Specific Address with Id\"],[9],[0,\"\\n\"],[9],[0,\"\\n\\n\"],[7,\"div\",true],[8],[0,\"\\n    UPDATE:\\n    \"],[1,[28,\"input\",null,[[\"value\",\"placeholder\"],[[24,[\"updatedStreet\"]],\"new street for address 1\"]]],false],[0,\"\\n    \"],[7,\"button\",false],[3,\"action\",[[23,0,[]],\"updateAddress\"]],[8],[0,\"Update\"],[9],[0,\"\\n\"],[9],[0,\"\\n\\n\"],[7,\"div\",true],[8],[0,\"\\n    DELETE:\\n    \"],[1,[28,\"input\",null,[[\"value\",\"placeholder\"],[[24,[\"destroyId\"]],\"id of address to delete\"]]],false],[0,\"\\n    \"],[7,\"button\",false],[3,\"action\",[[23,0,[]],\"destroyAddress\"]],[8],[0,\"Delete\"],[9],[0,\"\\n\"],[9]],\"hasEval\":false}",
+    "id": "uXVVEXcp",
+    "block": "{\"symbols\":[],\"statements\":[[7,\"h1\",true],[8],[0,\"Application - COMMON STUFF\"],[9],[0,\"\\n\"],[7,\"p\",true],[8],[0,\"This EXIST (application.hbs) on EVERY ROUTE\"],[9],[0,\"\\n\"],[7,\"br\",true],[8],[9],[0,\"\\n\\n\"],[1,[22,\"outlet\"],false]],\"hasEval\":false}",
     "meta": {
       "moduleName": "address-book/templates/application.hbs"
+    }
+  });
+
+  _exports.default = _default;
+});
+;define("address-book/templates/form", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  var _default = Ember.HTMLBars.template({
+    "id": "A6R7py2x",
+    "block": "{\"symbols\":[\"address\"],\"statements\":[[7,\"div\",true],[8],[0,\"\\n    READ:\\n    Addresses:\\n    \"],[7,\"ul\",true],[8],[0,\"\\n\"],[0,\"\\n\"],[4,\"each\",[[24,[\"model\"]]],null,{\"statements\":[[0,\"        \"],[7,\"li\",true],[8],[0,\"ID \"],[1,[23,1,[\"id\"]],false],[0,\": \"],[1,[23,1,[\"contactName\"]],false],[0,\" lives at \"],[1,[23,1,[\"streetName\"]],false],[0,\",\\n            \"],[1,[23,1,[\"city\"]],false],[0,\",\"],[1,[23,1,[\"state\"]],false],[0,\", \"],[1,[23,1,[\"zipCode\"]],false],[9],[0,\"\\n\"]],\"parameters\":[1]},null],[0,\"    \"],[9],[0,\"\\n\"],[9],[0,\"\\n\\n\"],[7,\"div\",true],[8],[0,\"\\n    READ: Read Address with Id #1\\n    \"],[7,\"button\",false],[3,\"action\",[[23,0,[]],\"readAddress\"]],[8],[0,\"Read Address 1\"],[9],[0,\"\\n\"],[9],[0,\"\\n\\n\"],[7,\"div\",true],[10,\"style\",\"padding: 10px; margin: 10px; border: 1px solid #666\"],[8],[0,\"\\n    CREATE:\\n\"],[0,\"    \"],[1,[28,\"input\",null,[[\"value\",\"placeholder\"],[[24,[\"newContactName\"]],\"Contact name\"]]],false],[7,\"br\",true],[8],[9],[0,\"\\n    \"],[1,[28,\"input\",null,[[\"value\",\"placeholder\"],[[24,[\"newStreetName\"]],\"Street name\"]]],false],[7,\"br\",true],[8],[9],[0,\"\\n    \"],[1,[28,\"input\",null,[[\"value\",\"placeholder\"],[[24,[\"newCity\"]],\"City\"]]],false],[7,\"br\",true],[8],[9],[0,\"\\n    \"],[1,[28,\"input\",null,[[\"value\",\"placeholder\"],[[24,[\"newState\"]],\"State\"]]],false],[7,\"br\",true],[8],[9],[0,\"\\n    \"],[1,[28,\"input\",null,[[\"value\",\"placeholder\"],[[24,[\"newZipCode\"]],\"Zip Code\"]]],false],[7,\"br\",true],[8],[9],[0,\"\\n\\n    \"],[7,\"button\",false],[3,\"action\",[[23,0,[]],\"createAddress\"]],[8],[0,\"Create\"],[9],[0,\"\\n\"],[9],[0,\"\\n\\n\"],[7,\"div\",true],[8],[0,\"\\n    READ:\\n    \"],[1,[28,\"input\",null,[[\"value\",\"placeholder\"],[[24,[\"addressId\"]],\"Address Id\"]]],false],[0,\"\\n    \"],[7,\"button\",false],[3,\"action\",[[23,0,[]],\"readAddress\"]],[8],[0,\"Read Specific Address with Id\"],[9],[0,\"\\n\"],[9],[0,\"\\n\\n\"],[7,\"div\",true],[8],[0,\"\\n    UPDATE:\\n    \"],[1,[28,\"input\",null,[[\"value\",\"placeholder\"],[[24,[\"updatedStreet\"]],\"new street for address 1\"]]],false],[0,\"\\n    \"],[7,\"button\",false],[3,\"action\",[[23,0,[]],\"updateAddress\"]],[8],[0,\"Update\"],[9],[0,\"\\n\"],[9],[0,\"\\n\\n\"],[7,\"div\",true],[8],[0,\"\\n    DELETE:\\n    \"],[1,[28,\"input\",null,[[\"value\",\"placeholder\"],[[24,[\"destroyId\"]],\"id of address to delete\"]]],false],[0,\"\\n    \"],[7,\"button\",false],[3,\"action\",[[23,0,[]],\"destroyAddress\"]],[8],[0,\"Delete\"],[9],[0,\"\\n\"],[9]],\"hasEval\":false}",
+    "meta": {
+      "moduleName": "address-book/templates/form.hbs"
+    }
+  });
+
+  _exports.default = _default;
+});
+;define("address-book/templates/grid", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  var _default = Ember.HTMLBars.template({
+    "id": "/SutgxI+",
+    "block": "{\"symbols\":[],\"statements\":[[7,\"h1\",true],[8],[0,\"Flexbox vs. Grid CSS\"],[9],[0,\"\\n\"],[7,\"p\",true],[8],[0,\"Grid is Container-Based, Flexbox is Content-Based\"],[9],[0,\"\\n\"],[7,\"h2\",true],[8],[0,\"Flex\"],[9],[0,\"\\n\"],[7,\"div\",true],[10,\"class\",\"row_flex\"],[8],[0,\"\\n    \"],[7,\"div\",true],[8],[0,\"1\"],[9],[0,\"\\n    \"],[7,\"div\",true],[8],[0,\"2\"],[9],[0,\"\\n    \"],[7,\"div\",true],[8],[0,\"3\"],[9],[0,\"\\n    \"],[7,\"div\",true],[8],[0,\"4\"],[9],[0,\"\\n\"],[9],[0,\"\\n\\n\"],[7,\"h2\",true],[8],[0,\"Grid\"],[9],[0,\"\\n\"],[7,\"div\",true],[10,\"class\",\"row_grid\"],[8],[0,\"\\n    \"],[7,\"div\",true],[8],[0,\"1\"],[9],[0,\"\\n    \"],[7,\"div\",true],[8],[0,\"2\"],[9],[0,\"\\n    \"],[7,\"div\",true],[8],[0,\"3\"],[9],[0,\"\\n    \"],[7,\"div\",true],[8],[0,\"4\"],[9],[0,\"\\n\"],[9],[0,\"\\n\\n\"],[7,\"h1\",true],[8],[0,\"Flexbox is One Dimensional, Grid is Two Dimensional\"],[9],[0,\"\\n\"],[7,\"h2\",true],[8],[0,\"Flex with Icons\"],[9],[0,\"\\n\"],[7,\"p\",true],[8],[0,\"one dimensional layout - All the elements are in a single row\"],[9],[0,\"\\n\"],[7,\"ul\",true],[10,\"class\",\"social-icons\"],[8],[0,\"\\n    \"],[7,\"li\",true],[8],[7,\"a\",true],[10,\"href\",\"#\"],[8],[7,\"i\",true],[10,\"class\",\"fab fa-facebook-f\"],[8],[9],[9],[9],[0,\"\\n    \"],[7,\"li\",true],[8],[7,\"a\",true],[10,\"href\",\"#\"],[8],[7,\"i\",true],[10,\"class\",\"fab fa-twitter\"],[8],[9],[9],[9],[0,\"\\n    \"],[7,\"li\",true],[8],[7,\"a\",true],[10,\"href\",\"#\"],[8],[7,\"i\",true],[10,\"class\",\"fab fa-instagram\"],[8],[9],[9],[9],[0,\"\\n    \"],[7,\"li\",true],[8],[7,\"a\",true],[10,\"href\",\"#\"],[8],[7,\"i\",true],[10,\"class\",\"fab fa-github\"],[8],[9],[9],[9],[0,\"\\n    \"],[7,\"li\",true],[8],[7,\"a\",true],[10,\"href\",\"#\"],[8],[7,\"i\",true],[10,\"class\",\"fas fa-envelope\"],[8],[9],[9],[9],[0,\"\\n    \"],[7,\"li\",true],[8],[7,\"a\",true],[10,\"href\",\"#\"],[8],[7,\"i\",true],[10,\"class\",\"fas fa-rss\"],[8],[9],[9],[9],[0,\"\\n\"],[9],[0,\"\\n\\n\"],[7,\"h2\",true],[8],[0,\"Make use of CSS Grid\"],[9],[0,\"\\n\"],[7,\"p\",true],[8],[0,\"We are creating two columns using the grid-template-columns property, and three rows using grid-template-rows\\n    property. The repeat() function creates 3 rows with auto height.\"],[9],[0,\"\\n\"],[7,\"p\",true],[8],[0,\"Then, inside the grid-items (header, main, aside, and footer) we define how much area those grid-items will cover\\n    using the grid-area property.\"],[9],[0,\"\\n\"],[7,\"div\",true],[10,\"class\",\"container\"],[8],[0,\"\\n    \"],[7,\"header\",true],[8],[0,\"Header\"],[9],[0,\"\\n    \"],[7,\"main\",true],[8],[0,\"Main\"],[9],[0,\"\\n    \"],[7,\"aside\",true],[8],[0,\"Aside\"],[9],[0,\"\\n    \"],[7,\"footer\",true],[8],[0,\"Footer\"],[9],[0,\"\\n\"],[9],[0,\"\\n\\n\"],[7,\"h2\",true],[8],[0,\"Tutorial https://www.youtube.com/watch?v=jV8B24rSN5o\"],[9],[0,\"\\n\\n\"],[7,\"div\",true],[10,\"class\",\"wrapper\"],[8],[0,\"\\n    \"],[7,\"div\",true],[8],[0,\"\\n        Lorem ipsum dolor sit.\\n    \"],[9],[0,\"\\n    \"],[7,\"div\",true],[8],[0,\"\\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam libero excepturi cupiditate quasi sit. Iure\\n        totam a magni, veritatis, voluptatem voluptates tempora praesentium et nisi eligendi. A saepe eaque aliquam,\\n        earum nihil quia? Nemo delectus possimus, explicabo repudiandae recusandae. Mollitia!\\n    \"],[9],[0,\"\\n    \"],[7,\"div\",true],[10,\"class\",\"nested\"],[8],[0,\"\\n        \"],[7,\"div\",true],[8],[0,\"Lorem\"],[9],[0,\"\\n        \"],[7,\"div\",true],[8],[0,\"Lorem\"],[9],[0,\"\\n        \"],[7,\"div\",true],[8],[0,\"Lorem\"],[9],[0,\"\\n        \"],[7,\"div\",true],[8],[0,\"Lorem\"],[9],[0,\"\\n        \"],[7,\"div\",true],[8],[0,\"Lorem\"],[9],[0,\"\\n        \"],[7,\"div\",true],[8],[0,\"Lorem\"],[9],[0,\"\\n        \"],[7,\"div\",true],[8],[0,\"Lorem\"],[9],[0,\"\\n        \"],[7,\"div\",true],[8],[0,\"Lorem\"],[9],[0,\"\\n        \"],[7,\"div\",true],[8],[0,\"Lorem\"],[9],[0,\"\\n    \"],[9],[0,\"\\n    \"],[7,\"div\",true],[8],[0,\"\\n        Lorem ipsum dolor sit.\\n    \"],[9],[0,\"\\n    \"],[7,\"div\",true],[8],[0,\"\\n        Lorem ipsum dolor sit.\\n    \"],[9],[0,\"\\n    \"],[7,\"div\",true],[8],[0,\"\\n        Lorem ipsum dolor sit.\\n    \"],[9],[0,\"\\n    \"],[7,\"div\",true],[8],[0,\"\\n        Lorem ipsum dolor sit.\\n    \"],[9],[0,\"\\n\"],[9],[0,\"\\n\\n\"],[7,\"br\",true],[8],[9],[0,\"\\n\"],[7,\"hr\",true],[8],[9],[0,\"\\n\"],[7,\"br\",true],[8],[9],[0,\"\\n\"],[7,\"div\",true],[10,\"class\",\"wrapper2\"],[8],[0,\"\\n    \"],[7,\"div\",true],[10,\"class\",\"box box1\"],[8],[0,\"Box 1\"],[9],[0,\"\\n    \"],[7,\"div\",true],[10,\"class\",\"box box2\"],[8],[0,\"Box 2\"],[9],[0,\"\\n    \"],[7,\"div\",true],[10,\"class\",\"box box3\"],[8],[0,\"Box 3\"],[9],[0,\"\\n    \"],[7,\"div\",true],[10,\"class\",\"box box4\"],[8],[0,\"Box 4\"],[9],[0,\"\\n\"],[9]],\"hasEval\":false}",
+    "meta": {
+      "moduleName": "address-book/templates/grid.hbs"
+    }
+  });
+
+  _exports.default = _default;
+});
+;define("address-book/templates/picture", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  var _default = Ember.HTMLBars.template({
+    "id": "uo/kHjcV",
+    "block": "{\"symbols\":[],\"statements\":[[7,\"h1\",true],[8],[0,\"Picture Tag\"],[9],[0,\"\\n\"],[7,\"div\",true],[8],[0,\"\\n    Switches image based on width:\\n    \"],[7,\"br\",true],[8],[9],[0,\"\\n    \"],[7,\"picture\",true],[8],[0,\"\\n        \"],[7,\"source\",true],[10,\"media\",\"(min-width: 650px)\"],[10,\"srcset\",\"/images/kobe_large.jpg\"],[8],[9],[0,\"\\n        \"],[7,\"source\",true],[10,\"media\",\"(min-width: 575px)\"],[10,\"srcset\",\"/images/kobe_medium.jpg\"],[8],[9],[0,\"\\n        \"],[7,\"img\",true],[10,\"src\",\"/images/kobe_sm.jpg\"],[10,\"alt\",\"Kobe\"],[10,\"style\",\"width:auto;\"],[8],[9],[0,\"\\n    \"],[9],[0,\"\\n\\n    \"],[7,\"hr\",true],[8],[9],[0,\"\\n    IMAGE with Srcset > device pixel ratio:\\n    \"],[7,\"br\",true],[8],[9],[0,\"\\n    \"],[7,\"img\",true],[10,\"srcset\",\"/images/kobe_sm.jpg 1x, /images/kobe_medium.jpg 2x\"],[10,\"src\",\"/public/images/kobe_sm.jpg\"],[10,\"alt\",\"Kobe Bryant\"],[8],[9],[0,\"\\n    \"],[7,\"hr\",true],[8],[9],[0,\"\\n    IMAGE with fluid / variable sized image:\\n    \"],[7,\"p\",true],[8],[0,\"Mark up variable sized images that scale up and down efficiently\"],[9],[0,\"\\n    \"],[7,\"br\",true],[8],[9],[0,\"\\n    \"],[7,\"img\",true],[10,\"srcset\",\"/images/kobe_large.jpg  1024w,\\n      /images/kobe_medium.jpg 640w,\\n      /images/kobe_sm.jpg  320w\"],[10,\"sizes\",\"(min-width: 36em) calc(.333 * (100vw - 12em)),\\n   100vw\"],[10,\"src\",\"kobe_sm.jpg\"],[10,\"alt\",\"Kobe\"],[8],[9],[0,\"\\n    \"],[7,\"hr\",true],[8],[9],[0,\"\\n    \"],[7,\"br\",true],[8],[9],[0,\"\\n    \"],[7,\"hr\",true],[8],[9],[0,\"\\n    IMAGE with art direction:\\n    \"],[7,\"p\",true],[8],[0,\"Layering another method of source grouping\"],[9],[0,\"\\n    \"],[7,\"picture\",true],[8],[0,\"\\n        \"],[7,\"source\",true],[10,\"media\",\"(min-width: 36em)\"],[10,\"srcset\",\"/images/kobe_large.jpg  1024w,\\n         /images/kobe_medium.jpg 640w,\\n         /images/kobe_sm.jpg 320w\"],[10,\"sizes\",\"33.3vw\"],[8],[9],[0,\"\\n        \"],[7,\"source\",true],[10,\"srcset\",\"/images/kobe_large.jpg 2x,\\n         /images/kobe_square.jpg 1x\"],[8],[9],[0,\"\\n        \"],[7,\"img\",true],[10,\"src\",\"/images/kobe_small.jpg\"],[10,\"alt\",\"Kobe Bryant\"],[8],[9],[0,\"\\n    \"],[9],[0,\"\\n    \"],[7,\"br\",true],[8],[9],[0,\"\\n    \"],[7,\"hr\",true],[8],[9],[0,\"\\n    IMAGE with type switching with webp:\\n    \"],[7,\"br\",true],[8],[9],[0,\"\\n    \"],[7,\"p\",true],[8],[0,\"Visual differences are nearly imperceptible, file size are substantial (faster)\"],[9],[0,\"\\n    \"],[7,\"p\",true],[8],[0,\"WebP not a replacement for JPEG and PNG images. WebP = Google technology\"],[9],[0,\"\\n    \"],[7,\"br\",true],[8],[9],[0,\"\\n    \"],[7,\"img\",true],[10,\"src\",\"/images/kobe_logo.png\"],[10,\"alt\",\"Kobe Logo\"],[10,\"width\",\"150px\"],[8],[9],[0,\"\\n    \"],[7,\"br\",true],[8],[9],[7,\"br\",true],[8],[9],[0,\"\\n    \"],[7,\"picture\",true],[8],[0,\"\\n        \"],[7,\"source\",true],[10,\"srcset\",\"/images/kobe_webp.webp\"],[10,\"type\",\"image/webp\"],[8],[9],[0,\"\\n        \"],[7,\"source\",true],[10,\"srcset\",\"/images/kobe_logo.svg\"],[10,\"type\",\"image/svg\"],[8],[9],[0,\"\\n        \"],[7,\"source\",true],[10,\"srcset\",\"/images/kobe_logo.png\"],[10,\"type\",\"image/png\"],[8],[9],[0,\"\\n        \"],[7,\"img\",true],[10,\"src\",\"/images/kobe-hear.gif\"],[10,\"alt\",\"Kobe Hearing\"],[8],[9],[0,\"\\n    \"],[9],[0,\"\\n\"],[9]],\"hasEval\":false}",
+    "meta": {
+      "moduleName": "address-book/templates/picture.hbs"
     }
   });
 
@@ -547,7 +652,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("address-book/app")["default"].create({"name":"address-book","version":"0.0.0+a4ae609e"});
+            require("address-book/app")["default"].create({"name":"address-book","version":"0.0.0+98bec182"});
           }
         
 //# sourceMappingURL=address-book.map

@@ -1,0 +1,50 @@
+{{!-- https://medium.com/ember-ish/the-simplest-possible-ember-data-crud-16eacee33ae6 --}}
+{{!-- https://medium.com/codingthesmartway-com-blog/create-a-rest-api-with-json-server-36da8680136d --}}
+<div>
+    READ:
+    Addresses:
+    <ul>
+        {{!-- Model is an array (or collection) of addresses records, so in order to work with an array, we need to iterate over it. 
+        Ember has a special helper for the template called each . Inside of the each helper, we’re working with a single address record, and so we can display the adddress.     --}}
+
+        {{#each model as |address|}}
+        <li>ID {{address.id}}: {{address.contactName}} lives at {{address.streetName}},
+            {{address.city}},{{address.state}}, {{address.zipCode}}</li>
+        {{/each}}
+    </ul>
+</div>
+
+<div>
+    READ: Read Address with Id #1
+    <button {{action 'readAddress'}}>Read Address 1</button>
+</div>
+
+<div style="padding: 10px; margin: 10px; border: 1px solid #666">
+    CREATE:
+    {{!-- special Ember text inputs that will create a form field --}}
+    {{input value=newContactName placeholder="Contact name"}}<br />
+    {{input value=newStreetName placeholder="Street name"}}<br />
+    {{input value=newCity placeholder="City"}}<br />
+    {{input value=newState placeholder="State"}}<br />
+    {{input value=newZipCode placeholder="Zip Code"}}<br />
+
+    <button {{action 'createAddress'}}>Create</button>
+</div>
+
+<div>
+    READ:
+    {{input value=addressId placeholder="Address Id"}}
+    <button {{action 'readAddress'}}>Read Specific Address with Id</button>
+</div>
+
+<div>
+    UPDATE:
+    {{input value=updatedStreet placeholder="new street for address 1"}}
+    <button {{action 'updateAddress'}}>Update</button>
+</div>
+
+<div>
+    DELETE:
+    {{input value=destroyId placeholder="id of address to delete"}}
+    <button {{action 'destroyAddress'}}>Delete</button>
+</div>

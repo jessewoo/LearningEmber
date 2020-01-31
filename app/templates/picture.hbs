@@ -1,0 +1,52 @@
+<h1>Picture Tag</h1>
+<div>
+    Switches image based on width:
+    <br>
+    <picture>
+        <source media="(min-width: 650px)" srcset="/images/kobe_large.jpg">
+        <source media="(min-width: 575px)" srcset="/images/kobe_medium.jpg">
+        <img src="/images/kobe_sm.jpg" alt="Kobe" style="width:auto;">
+    </picture>
+
+    <hr>
+    IMAGE with Srcset > device pixel ratio:
+    <br>
+    <img srcset="/images/kobe_sm.jpg 1x, /images/kobe_medium.jpg 2x" src="/public/images/kobe_sm.jpg"
+        alt="Kobe Bryant" />
+    <hr>
+    IMAGE with fluid / variable sized image:
+    <p>Mark up variable sized images that scale up and down efficiently</p>
+    <br>
+    <img srcset="/images/kobe_large.jpg  1024w,
+      /images/kobe_medium.jpg 640w,
+      /images/kobe_sm.jpg  320w" sizes="(min-width: 36em) calc(.333 * (100vw - 12em)),
+   100vw" src="kobe_sm.jpg" alt="Kobe" />
+    <hr>
+    <br>
+    <hr>
+    IMAGE with art direction:
+    <p>Layering another method of source grouping</p>
+    <picture>
+        <source media="(min-width: 36em)" srcset="/images/kobe_large.jpg  1024w,
+         /images/kobe_medium.jpg 640w,
+         /images/kobe_sm.jpg 320w" sizes="33.3vw" />
+        <source srcset="/images/kobe_large.jpg 2x,
+         /images/kobe_square.jpg 1x" />
+        <img src="/images/kobe_small.jpg" alt="Kobe Bryant" />
+    </picture>
+    <br>
+    <hr>
+    IMAGE with type switching with webp:
+    <br>
+    <p>Visual differences are nearly imperceptible, file size are substantial (faster)</p>
+    <p>WebP not a replacement for JPEG and PNG images. WebP = Google technology</p>
+    <br>
+    <img src="/images/kobe_logo.png" alt="Kobe Logo" width="150px" />
+    <br><br>
+    <picture>
+        <source type="image/webp" srcset="/images/kobe_webp.webp" />
+        <source type="image/svg" srcset="/images/kobe_logo.svg" />
+        <source type="image/png" srcset="/images/kobe_logo.png" />
+        <img src="/images/kobe-hear.gif" alt="Kobe Hearing" />
+    </picture>
+</div>
