@@ -9,5 +9,5 @@ export default class Router extends EmberRouter {
 Router.map(function() {
   this.route("picture");
   this.route("grid");
-  this.route('form');
+  this.route("form");
 });

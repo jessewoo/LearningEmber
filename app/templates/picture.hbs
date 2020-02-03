@@ -1,5 +1,31 @@
 <h1>Picture Tag</h1>
 <div>
+    Source Media:
+    <p>Source tag - 2 separate art-directed versions of the image; img = fallback</p>
+    <p>First source - full uncropped version of our image, show full image only in the 3 column layout, viewport is
+        wider than 36 ems. media = 36em. If media is TRUE, browser must use that source. </p>
+    <p>Second source - if viewport is narrower than 36 ems, the first source tag will be evaluate to false and go to
+        second.</p>
+    <br>
+    <picture>
+        <source media="(min-width: 36em)" srcset="/images/kobe_large.jpg 1024w,
+      /images/kobe_medium.jpg 640w,
+      /images/kobe_small.jpg 320w" sizes="33.3vw" />
+        <source srcset="/images/cropped_kobe_large.jpg 2x,
+         /images/kobe_square.jpg 1x" />
+        <img src="/images/kobe_sm.jpg" alt="Kobe">
+    </picture>
+    <hr>
+    <br>
+    We’re specifying only image widths:<br>
+    <img srcset="/images/kobe_large.jpg  1024w,
+      /images/kobe_medium.jpg 640w,
+      /images/kobe_sm.jpg  320w" sizes="(min-width: 36em) 33.3vw,
+      100vw" src="/images/kobe_sm.jpg" alt="Kobe" />
+    <hr>
+    <br>
+
+    <br>
     Switches image based on width:
     <br>
     <picture>
@@ -7,8 +33,8 @@
         <source media="(min-width: 575px)" srcset="/images/kobe_medium.jpg">
         <img src="/images/kobe_sm.jpg" alt="Kobe" style="width:auto;">
     </picture>
+    <br>
 
-    <hr>
     IMAGE with Srcset > device pixel ratio:
     <br>
     <img srcset="/images/kobe_sm.jpg 1x, /images/kobe_medium.jpg 2x" src="/public/images/kobe_sm.jpg"
